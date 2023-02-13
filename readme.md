@@ -2,6 +2,7 @@
   <h1>yt-backup</h1>
 
   ![Rust](https://img.shields.io/badge/rust-stable-brightgreen.svg)
+  [![](https://img.shields.io/badge/docker-ghcr.io%2Fmarktuddenham%2Fyt--backup-blue)](https://github.com/MarkTuddenham/yt-backup/pkgs/container/yt-backup)
 
 </div>
 
@@ -53,7 +54,12 @@ Example yt-dlp configuration:
 
 ## Docker
 ```bash
-docker run -v $(pwd)/path/to/video/store:/app/data -v $(pwd)/yt-dpl.config:/app/yt-dlp.config -v $(pwd)/config.toml:/app/config.toml --name yt-backup yt-backup
+docker run \
+    -v $(pwd)/path/to/video/store:/app/data \
+    -v $(pwd)/yt-dpl.config:/app/yt-dlp.config \
+    -v $(pwd)/config.toml:/app/config.toml \
+    --name yt-backup \
+    ghcr.io/marktuddenham/yt-backup:latest
 ```
 with config
 
