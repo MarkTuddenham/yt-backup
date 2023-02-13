@@ -1,0 +1,13 @@
+target
+readme.md
+
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+config.toml
+tmp
+
+.git
+.gitignore
+

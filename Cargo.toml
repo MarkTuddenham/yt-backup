@@ -1,11 +1,20 @@
 [package]
 name = "yt-backup"
-version = "0.1.0"
+version = "0.0.1"
 edition = "2021"
+authors = ["Mark Tuddenham <mark@tudders.com>"]
+description = "Backup youtube channels and playlists"
+
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
 anyhow = "1.0.69"
+chrono = "0.4.23"
+clap = { version = "4.1.4", features = ["derive"] }
+dirs = "4.0.0"
 serde = { version = "1.0.152", features = ["derive"] }
 toml = "0.7.2"
+tracing = "0.1.37"
+tracing-appender = "0.2.2"
+tracing-subscriber = "0.3.16"

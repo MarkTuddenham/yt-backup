@@ -7,13 +7,13 @@
 
 > Backup your favourite YouTube channels using [yt-dlp](https://github.com/yt-dlp/yt-dlp)
 
-Run with the default config location `./config.toml`
+Run with the default config location `<config_dir>/yt-backup/config.toml` or `./config.toml`
 ```bash
 yt-backup
 ```
 or specify a config path
 ```bash
-yt-backup /path/to/config.toml
+yt-backup --config /path/to/config.toml
 ```
 
 ## Configuration
@@ -23,7 +23,7 @@ Example configuration:
 ```toml
 root_dir_path = "/path/to/backup/" # directory to download everything to (default "./")
 link_type = "hard" # "hard" or "soft" use symlinks or hard links (default "hard")
-ytdlp_config_path  ="/path/to/configs/yt-dlp.config"
+ytdlp_config_path = "/path/to/configs/yt-dlp.config"
 
 playlists = [ # download the below playlists but unassociated with a channel.
     "PLUeHTafWecAVblNx278wBxkIQXw7iJws3"
@@ -46,8 +46,19 @@ Example yt-dlp configuration:
 --embed-subs
 --no-progress
 --no-colors
--v
 --write-thumbnail
 --write-description
 -r 3M
+```
+
+## Docker
+```bash
+docker run -v $(pwd)/path/to/video/store:/app/data -v $(pwd)/yt-dpl.config:/app/yt-dlp.config -v $(pwd)/config.toml:/app/config.toml --name yt-backup yt-backup
+```
+with config
+
+```toml
+root_dir_path = "/app/data/"
+ytdlp_config_path = "/app/yt-dlp.config"
+
 ```

@@ -1,0 +1,6 @@
+root_dir_path = "/app/data/"
+link_type = "hard"
+ytdlp_config_path = "/app/yt-dlp.config"
+
+[[channels]]
+name = "JapaneseToolsAustralia"
