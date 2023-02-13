@@ -1,6 +1,6 @@
 FROM alpine:3.17 as base_image
 MAINTAINER Mark Tuddenham	<mark@tudders.com>
-RUN apk add wget python3
+RUN apk add wget python3 ffmpeg
 RUN wget -P /usr/bin https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp \
 		&& chmod +x /usr/bin/yt-dlp
 
