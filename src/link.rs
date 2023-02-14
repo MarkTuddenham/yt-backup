@@ -81,17 +81,16 @@ fn link_playlist(
     );
 
     for (i, video_name) in pl_video_names.iter().enumerate() {
-        let mut original_file_path = video_dir_path.as_ref().join(video_name);
+        // .set_extension will override any "." in a video name the first time it's set,
+        // so set a temporary extension to add an extra ".":
+        // "video name..." -> "video_name....tmp"
+        // "video.name" -> "video.name.tmp"
+        let mut original_file_path = video_dir_path.as_ref().join(video_name.to_owned() + ".tmp");
         let mut new_file_path =
             playlist_dir_path
                 .as_ref()
                 .join(format!("{:0>3} - {}", i + 1, video_name));
 
-        // .set_extension will override a "." at the end of the video name the first time it's set,
-        // so set a temporary extension to add an extra ".": "video_name" -> "video_name..tmp"
-        if video_name.ends_with('.') {
-            original_file_path.set_extension(".tmp");
-        }
 
         let extensions =
             get_extensions_for_existing_video_files(video_dir_path.as_ref(), video_name)?;

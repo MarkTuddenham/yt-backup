@@ -56,7 +56,7 @@ Example yt-dlp configuration:
 ```bash
 docker run \
     -v $(pwd)/path/to/video/store:/app/data \
-    -v $(pwd)/yt-dpl.config:/app/yt-dlp.config \
+    -v $(pwd)/yt-dlp.config:/app/yt-dlp.config \
     -v $(pwd)/config.toml:/app/config.toml \
     --name yt-backup \
     ghcr.io/marktuddenham/yt-backup:latest

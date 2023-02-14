@@ -69,11 +69,11 @@ fn get_config_path(config_path: Option<impl AsRef<Path>>) -> Result<PathBuf> {
 pub fn load_config(config_path: Option<impl AsRef<Path>>) -> Result<Config> {
     let config_path = get_config_path(config_path)?;
 
-
     let config_data = fs::read_to_string(config_path)?;
     let mut config: Config = toml::from_str(&config_data).map_err(anyhow::Error::msg)?;
 
     // TODO: check that this url exists
+    // TODO: https://www.youtube.com/@<name> looks to be more common
     config.channels.iter_mut().for_each(|c| {
         if c.url.is_none() {
             c.url = Some(format!("https://youtube.com/c/{}", c.name));

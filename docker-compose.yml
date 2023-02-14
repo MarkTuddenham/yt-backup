@@ -1,7 +1,0 @@
-version: "2"
-services:
-  yt-backup:
-    build: .
-    volumes:
-      - ./tmp:/data
-

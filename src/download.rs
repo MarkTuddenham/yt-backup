@@ -30,12 +30,15 @@ pub fn download_channel(
             })?;
 
         let mut args = vec![
-            "--config".into(),
+            "--ignore-config".into(),
+            "--config-locations".into(),
             ytdlp_config_path,
             "-o".into(),
             "%(title)s.%(ext)s".into(),
         ];
 
+        // TODO: a better way to check what videos we have, and only download if there are new
+        // ones, even better if we can only download the new ones too
         if let (true, Some(download_after)) = (incremental_download, download_after) {
             args.push("--dateafter".into());
             args.push(download_after);
@@ -44,11 +47,17 @@ pub fn download_channel(
         args.push(url.to_owned());
         tracing::trace!("Running \"yt-dlp {args:?}\" in {folder:?}");
 
-        return Command::new("yt-dlp")
+        // TODO: add some sort of progress e.g. by capturing the number of videos to download from
+        // the stdout
+        let res = Command::new("yt-dlp")
             .args(args)
             .current_dir(folder)
             .output()
             .map_err(anyhow::Error::msg);
+
+        tracing::trace!("{res:?}");
+        res
+
     } else {
         Err(anyhow::Error::msg("No url to download from"))
     }

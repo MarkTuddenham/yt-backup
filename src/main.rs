@@ -59,7 +59,7 @@ fn main() {
 
     let subscriber = Registry::default().with(file_logger).with(stdout_logger);
 
-    tracing::subscriber::set_global_default(subscriber).expect("unable to set global subscriber");
+    tracing::subscriber::set_global_default(subscriber).expect("unable to set global tracing subscriber");
 
     if let Err(e) = app(&args) {
         tracing::error!("{e}");
