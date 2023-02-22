@@ -75,13 +75,17 @@ fn app(args: &Args) -> anyhow::Result<()> {
     for chan in &cfg.channels {
         tracing::trace!("{chan:?}");
         if !args.skip_download {
-            download_channel(
+            let res = download_channel(
                 chan,
                 &cfg.root_dir_path,
                 &cfg.video_dir_name,
                 &cfg.ytdlp_config_path,
                 args.incremental_download,
-            )?;
+            );
+
+            if let Err(e) = res {
+                tracing::error!("Error downloading channel {}: {}", chan.name, e);
+            }
         }
         link_channel_playlists(
             chan,
