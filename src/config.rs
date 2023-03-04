@@ -89,16 +89,18 @@ impl TryFrom<&str> for Playlist {
     fn try_from(value: &str) -> Result<Self, Self::Error> {
         // e.g. Tuning Japanese Planes [PLSVL0S3stcMRpN9zl_PxEfBJvr7HCNd6Y].NA
 
-        let len = value.len();
+        // Use .chars() to handle multi-byte unicode chars with slice indexing
+        let len = value.chars().count();
         if len < 41 {
             return Err(anyhow::Error::msg(
                 "string is not long enough to be a playlist in the form \"<name> [<34-char id>].NA\"",
             ));
         }
 
+        let value_vec = value.chars();
         Ok(Playlist {
-            id: value[len - 38..len - 4].to_owned(),
-            name: value[..len - 40].to_owned(),
+            id: value_vec.clone().take(len - 4).skip(len - 38).collect(),
+            name: value_vec.take(len - 40).collect(),
         })
     }
 }

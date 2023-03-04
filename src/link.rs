@@ -66,7 +66,7 @@ fn get_playlist_video_names(playlist: &Playlist) -> Result<Vec<String>> {
         .split('\n')
         .map(|s| s.to_owned())
         .filter(|s| !s.is_empty())
-        .filter(|s| s != "[Private Video]" && s != "[Deleted Video]")
+        .filter(|s| s != "[Private video]" && s != "[Deleted video]")
         .collect())
 }
 
