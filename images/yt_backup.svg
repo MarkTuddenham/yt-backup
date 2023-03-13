@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 65 65"
+   version="1.1"
+   id="svg1096"
+   sodipodi:docname="yt_backup.svg"
+   inkscape:version="1.2 (dc2aeda, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <defs
+     id="defs1100" />
+  <sodipodi:namedview
+     id="namedview1098"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     showgrid="false"
+     inkscape:zoom="29.461538"
+     inkscape:cx="31.668407"
+     inkscape:cy="32.5"
+     inkscape:window-width="3840"
+     inkscape:window-height="2137"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1096" />
+  <path
+     fill="#ff0000"
+     d="M 62.62,17.37 C 61.9,14.67 59.77,12.54 57.06,11.81 52.16,10.5 32.5,10.5 32.5,10.5 c 0,0 -19.65,0 -24.5600001,1.31 -2.7,0.72 -4.83,2.85 -5.56,5.56 -1.31,4.9 -1.31,15.13 -1.31,15.13 0,0 0,10.23 1.31,15.13 0.72,2.7 2.85,4.83 5.56,5.56 C 12.85,54.5 32.5,54.5 32.5,54.5 c 0,0 19.66,0 24.56,-1.31 2.7,-0.72 4.83,-2.85 5.56,-5.56 1.31,-4.9 1.31,-15.13 1.31,-15.13 0,0 0,-10.23 -1.31,-15.13 z"
+     id="path1092" />
+  <xhtml:iframe
+     class="cleanslate hidden"
+     src="yt_files/commandline.html"
+     id="cmdline_iframe"
+     loading="lazy"
+     style="height: 0px !important;" />
+  <rect
+     style="fill:none;stroke:#ff00ff;stroke-width:2.14329;stroke-opacity:0"
+     id="rect3855"
+     width="16.689938"
+     height="4.6466126"
+     x="-11.888928"
+     y="8.9877882" />
+  <rect
+     style="fill:none;stroke:#ff00ff;stroke-width:2.14329;stroke-opacity:0"
+     id="rect3857"
+     width="11.403057"
+     height="2.3812587"
+     x="-8.7553215"
+     y="7.7175598" />
+  <g
+     id="g4641"
+     transform="translate(0,0.76925219)">
+    <polygon
+       fill="#ffffff"
+       points="26.6,20.57 26.6,39.43 42.93,30 "
+       id="polygon1094"
+       transform="rotate(90.083626,29.379302,33.116643)" />
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:#ff00ff;stroke-width:4.37464;stroke-opacity:0"
+       id="rect3859"
+       width="5.6929202"
+       height="11.97214"
+       x="29.769499"
+       y="18.97694" />
+  </g>
+</svg>
