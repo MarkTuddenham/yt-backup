@@ -1,4 +1,7 @@
 <div align=center>
+  <a href="https://github.com/marktuddenham/yt-backup">
+    <img src="https://raw.githubusercontent.com/marktuddenham/yt-backup/master/images/yt_backup.svg" alt="yt-backup" width="200">
+  </a>
   <h1>yt-backup</h1>
 
   ![Rust](https://img.shields.io/badge/rust-stable-brightgreen.svg)
