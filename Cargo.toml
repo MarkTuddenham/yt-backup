@@ -1,11 +1,14 @@
 [package]
 name = "yt-backup"
-version = "0.0.1"
+version = "0.0.2"
 edition = "2021"
 authors = ["Mark Tuddenham <mark@tudders.com>"]
 description = "Backup youtube channels and playlists"
 license = "MIT"
 repository = "https://github.com/MarkTuddenham/yt-backup"
+keywords = ["youtube", "download", "backup"]
+categories = ["command-line-utilities", "multimedia", "multimedia::video"]
+exclude = ["/images", "config.toml", "yt-dlp.config", "Dockerfile", ".dockerignore"]
 
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

@@ -1,3 +1,22 @@
+#![warn(
+    invalid_html_tags,
+    missing_debug_implementations,
+    trivial_casts,
+    trivial_numeric_casts,
+    unused_lifetimes,
+    unused_import_braces,
+    rustdoc::missing_crate_level_docs
+)]
+#![cfg_attr(feature = "cargo-clippy", deny(clippy::pedantic))]
+#![cfg_attr(
+    feature = "cargo-clippy",
+    allow(
+        renamed_and_removed_lints,
+        missing_debug_implementations,
+        module_name_repetitions,
+    )
+)]
+
 use anyhow::Ok;
 use clap::Parser;
 use tracing_subscriber::{filter::LevelFilter, fmt, prelude::*, Registry};
@@ -113,7 +132,7 @@ fn check_ytdlp_version() -> anyhow::Result<String> {
         .map_err(|_| anyhow::Error::msg("Could not find a yt-dlp executable"))
         .and_then(|o| {
             std::str::from_utf8(&o.stdout)
-                .map(|s| s.to_owned())
+                .map(std::borrow::ToOwned::to_owned)
                 .map_err(|_| anyhow::Error::msg("Could not convert yt-dlp version to string"))
         })
 }

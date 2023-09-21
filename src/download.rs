@@ -44,7 +44,7 @@ pub fn download_channel(
             args.push(download_after);
         }
 
-        args.push(url.to_owned());
+        args.push(url.clone());
         tracing::trace!("Running \"yt-dlp {args:?}\" in {folder:?}");
 
         // TODO: add some sort of progress e.g. by capturing the number of videos to download from

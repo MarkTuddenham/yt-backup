@@ -30,7 +30,7 @@ pub fn link_channel_playlists(
 fn get_playlists_in_channel(chan: &Channel) -> Result<Vec<Playlist>> {
     if let Some(url) = &chan.url {
         // view=1 is created playlists only, not recommended.
-        let url = url.to_owned() + "/playlists?view=1";
+        let url = url.clone() + "/playlists?view=1";
         tracing::trace!("get_playlists_in_channel: {url}");
         let output = Command::new("yt-dlp")
             .args(["--flat-playlist", "--get-filename", &url])
@@ -65,7 +65,7 @@ fn get_playlist_video_names(playlist: &Playlist) -> Result<Vec<String>> {
 
     Ok(output
         .split('\n')
-        .map(|s| s.to_owned())
+        .map(std::borrow::ToOwned::to_owned)
         .filter(|s| !s.is_empty())
         .filter(|s| s != "[Private video]" && s != "[Deleted video]")
         .collect())
@@ -88,7 +88,7 @@ fn link_playlist(
         // so set a temporary extension to add an extra ".":
         // "video name..." -> "video_name....tmp"
         // "video.name" -> "video.name.tmp"
-        let mut original_file_path = video_dir_path.as_ref().join(video_name.to_owned() + ".tmp");
+        let mut original_file_path = video_dir_path.as_ref().join(video_name.clone() + ".tmp");
         let mut new_file_path =
             playlist_dir_path
                 .as_ref()
@@ -104,7 +104,7 @@ fn link_playlist(
             tracing::warn!(
                 "Could not find any videos matching \"{video_name}\" in \"{}\"",
                 video_dir_path.as_ref().display()
-            )
+            );
         }
 
         for ext in &extensions {
