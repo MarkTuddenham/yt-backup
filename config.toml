@@ -3,4 +3,7 @@ link_type = "hard"
 ytdlp_config_path = "/app/yt-dlp.config"
 
 [[channels]]
-name = "JapaneseToolsAustralia"
+name="Royal Opera House"
+url="https://www.youtube.com/@RoyalOperaHouse"
+
+

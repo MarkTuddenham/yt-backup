@@ -11,6 +11,11 @@
 
 > Backup your favourite YouTube channels using [yt-dlp](https://github.com/yt-dlp/yt-dlp)
 
+Install from crates.io
+```bash
+cargo install --locked yt-backup
+```
+
 Run with the default config location `<config_dir>/yt-backup/config.toml` or `./config.toml`
 ```bash
 yt-backup
