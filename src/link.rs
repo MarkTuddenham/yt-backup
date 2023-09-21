@@ -18,6 +18,7 @@ pub fn link_channel_playlists(
     for pl in playlists {
         let playlist_dir_path = root_dir_path.as_ref().join(&chan.name).join(&pl.name);
         if relink {
+            tracing::trace!("Removing playlist dir {playlist_dir_path:?}");
             fs::remove_dir_all(&playlist_dir_path)?;
         }
         fs::create_dir_all(&playlist_dir_path)?;
@@ -93,6 +94,9 @@ fn link_playlist(
                 .as_ref()
                 .join(format!("{:0>3} - {}", i + 1, video_name));
 
+        // TODO: some yts have multiple channels so videos might be shared across these
+        // see if we can get the uploader id and if we have that channel downloaded link it to the
+        // playlist anyway.
         let extensions =
             get_extensions_for_existing_video_files(video_dir_path.as_ref(), video_name)?;
 
@@ -121,7 +125,7 @@ fn link_playlist(
             match link_res {
                 Ok(()) => (),
                 Err(ref e) if e.kind() == std::io::ErrorKind::AlreadyExists => (),
-                Err(e) => return Err(anyhow::Error::msg(e)),
+                Err(e) => return Err(anyhow::Error::from(e)),
             }
         }
     }

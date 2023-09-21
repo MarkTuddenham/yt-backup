@@ -52,6 +52,8 @@ pub fn download_channel(
         let res = Command::new("yt-dlp")
             .args(args)
             .current_dir(folder)
+            // TODO: redirect stdout only if debug
+            // .stdout(std::process::Stdio::inherit())
             .output()
             .map_err(anyhow::Error::msg);
 

@@ -20,7 +20,10 @@ pub struct Config {
     pub ytdlp_config_path: PathBuf,
 
     pub channels: Vec<Channel>,
+
     // pub playlists: Vec<Playlist>,
+
+    // pub twitch_channels: Vec<String>,
 }
 
 fn default_video_dir_name() -> String {
