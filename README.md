@@ -7,9 +7,11 @@
   ![Rust](https://img.shields.io/badge/rust-stable-brightgreen.svg)
   [![](https://img.shields.io/badge/docker-ghcr.io%2Fmarktuddenham%2Fyt--backup-blue)](https://github.com/MarkTuddenham/yt-backup/pkgs/container/yt-backup)
 
+ **Backup your favourite YouTube channels using [yt-dlp](https://github.com/yt-dlp/yt-dlp)**
+
 </div>
 
-> Backup your favourite YouTube channels using [yt-dlp](https://github.com/yt-dlp/yt-dlp)
+
 
 Install from crates.io
 ```bash
@@ -24,6 +26,10 @@ or specify a config path
 ```bash
 yt-backup --config /path/to/config.toml
 ```
+
+> [!CAUTION]
+> Not for use in a way that violates YouTube's T&Cs.
+> It's up to you to check your use is compliant.
 
 ## Configuration
 
